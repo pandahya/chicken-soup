@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Chicken Soup For The Dumbass Soul</title>
+</head>
+<style>
+    main{
+        margin: 8px auto;
+        max-width: 800px;
+    }
+    section{
+        margin-bottom: 60px;
+    }
+    section p{
+        max-width: 400px;
+        margin: 20px auto;
+        /* margin: 20px 40px; */
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+    }
+    nav div{
+        width: 300px;
+        height: 200px;
+        background-color: var(--card-color);
+        border: 1px solid var(--text-color);
+        border-radius: 1rem;
+    }
+    nav div p{
+        text-align: center;
+        margin: 80px;
+        text-transform: capitalize;
+    }
+    #byo-card{
+        border: 1px dashed var(--text-color);
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    #recipes-card{
+        color: var(--text-color);
+    }
+    #recipes-card:hover{
+        color: var(--accent-color);
+    }
+    #label{
+        color: var(--accent-color);
+        text-transform: capitalize;
+        border: 1px dashed var(--accent-color);
+        border-radius: 8px;
+        width: max-content;
+        height: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        rotate: 15deg;
+        margin: -150px 160px;
+    }
+    #label p{
+        padding: 0.25rem 0.5rem;
+        margin: 0;
+    }
+</style>
+<body>
+    <header>
+        <h1><a href="./index.html">chicken soup for the dumbass soul</a></h1>
+        <p>the world's best worst community cookbook</p>
+    </header>
+    <main>
+        <section>
+            <p>
+                A shared meal is one of the simplest and most fundamental human experiences. For us, who met in middle school, eating lunch together was the foundation to the relationships we have today. Growing up, however, means we naturally no longer have the same proximity and time that we once had to simply sit around and eat.
+            </p>
+            <p>
+                Here, we can share the wonderful and horrible recipes we enjoy personally, in the hopes that recreating them is in some way a reminder of the person who wrote them down, a capsule of the time we were in This is a place to share in what we can create; for every recipe used, we ask that you include a recipe of your own. Get cooking!
+            </p>
+        </section>
+        <nav>
+            <a id="recipes-card" href="./recipes.html">
+                <div>
+                    <p>our recipes</p>
+                </div>
+            </a>
+            <div id="byo-card">
+                <p>build your own community cookbook</p>
+                <div id="label"><p>coming soon!</p></div>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

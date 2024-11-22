@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+        --card-width: 360px;
+        --card-height: calc(var(--card-width) / (5 / 3));
+    }
+    p{
+        padding: 0;
+        margin: 0;
+    }
+    .section-card{
+        display: grid;
+        grid: auto auto / .25fr .25fr .25fr .25fr;
+        grid-template-areas: 
+            "a b c d"
+            "e e e e";
+        width: var(--card-width);
+        /* margin-bottom: calc(var(--card-height) - var(--card-height)); */
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/10);
+        background-color: white;
+    }
+    .card-tab{
+        /* padding: 1rem; */
+        /* background-color: rgba(173, 216, 230, 0.235); */
+        text-align: center;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 4px;
+        border: 1px solid black;
+        border-bottom: 0px;
+    }
+    .card-content{
+        /* background-color: rgba(240, 128, 128, 0.25); */
+        border: 1px solid black;
+        border-top: 0px;
+        width: var(--card-width);
+        height: var(--card-height);
+        background-color: white;
+    }
+    .recipe-card{
+        border: 1px solid black;
+        padding: 1rem;
+        width: var(--card-width);
+        height: var(--card-width);
+        display: grid;
+        grid: 0.1fr 0.1fr 0.8fr / 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr 0.125fr;
+        grid-template-areas:
+            "title title title title note note note note"
+            "author author author author note note note note"
+            "ingredients ingredients ingredients instructions instructions instructions instructions instructions";
+    }
+    .card-empty-tab{
+        border-bottom: 1px solid black;
+    }
+    .card-content{
+        grid-area: e;
+    }
+    #appetizers-section .card-tab{
+        grid-area: a;
+    }
+    #mains-section .card-tab{
+        grid-area: b;
+    }
+    #desserts-section .card-tab{
+        grid-area: c;
+    }
+    #drinks-section .card-tab{
+        grid-area: d;
+    }
+    .recipe-title{
+        grid-area: title;
+    }
+    .recipe-author{
+        grid-area: author;
+    }
+    .recipe-author::before{
+        content: "Recipe By: ";
+    }
+    .recipe-note{
+        grid-area: note;
+    }
+    .ingredients{
+        grid-area: ingredients;
+    }
+    .instructions{
+        grid-area: instructions;
+    }
+
+</style>
+<body>
+    <div class="section-card" id="appetizers-section">
+        <div class="card-tab">
+            <p>appetizers</p>
+        </div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-content">
+        </div>
+    </div>
+    <div class="section-card" id="mains-section">
+        <div class="card-tab">
+            <p>mains</p>
+        </div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-content">
+        </div>
+    </div>
+    <div class="section-card" id="desserts-section">
+        <div class="card-tab">
+            <p>desserts</p>
+        </div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-content">
+        </div>
+    </div>
+    <div class="section-card" id="drinks-section">
+        <div class="card-tab">
+            <p>drinks</p>
+        </div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-empty-tab"></div>
+        <div class="card-content">
+        </div>
+    </div>
+    <!-- <div class="recipe-card" id="viv-guac">
+        <p class="recipe-title">viv's guac</p>
+        <p class="recipe-author">viv (guest chef)</p>
+        <p class="recipe-note">Put it on anything. Rocks, locks, mohawks, and etc. Or chips if you're weird.</p>
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <p>Avocado
+                Tomatoes
+                Onion
+                Salt
+                Lemon Juice
+                Garlic Powder (optional)
+                I don't care about the proportion
+                Knife (butchers knife is best)
+                Cutting Board
+                Spoon or Something to mix (Whisk not the Best)
+                Juicer (VERY optional)</p>
+        </div>
+        <div class="instructions">
+            <h2>instructions</h2>
+            <p>
+                Cut avocado into squares for chunky guacamole. Leave to the side.
+                Cut onions and tomatoes into squares or something
+                Add the onions and tomatoes, lemon juice, garlic powder (optional).
+                Mix with avocado cubes.
+                Add salt
+                Eat with something
+                Put guac with chips and rocks.
+                EAT
+            </p>
+        </div>
+    </div> -->
+</body>
+<script>
+    fetch('./recipes.json') 
+    .then((response) => response.json())
+    .then((data) => {
+        
+    });
+</script>
+</html>

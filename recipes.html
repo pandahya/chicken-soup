@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Recipes | Chicken Soup For The Dumbass Soul</title>
+</head>
+<style>
+    main{
+        display: grid;
+        grid: 1fr / 0.3fr 0.7fr;
+        margin: 8px 120px;
+    }
+    #recipe-display-card{
+        border: 1px solid var(--text-color);
+        background-color: var(--card-color);
+        border-radius: 16px;
+        width: calc(var(--card-width) * 2);
+        height: calc(var(--card-height) * 2);
+        display: grid;
+        grid: 0.2fr 0.8fr / 0.4fr 0.6fr;
+        gap: 0.5rem;
+        grid-template-areas: 
+            "header header"
+            "ingredients instructions";
+        padding: 1.5rem;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+    #recipe-ingredients, #recipe-instructions{
+        overflow: auto;
+    }
+    #recipe-header{
+        grid-area: header;
+        border-bottom: 1px solid var(--accent-color);
+    }
+    #recipe-title{
+        color: var(--accent-color);
+    }
+    #recipe-navs{
+        display: flex;
+        justify-content: space-between;
+    }
+    .section-card{
+        display: grid;
+        grid: auto auto / .25fr .25fr .25fr .25fr;
+        grid-template-areas: 
+            "a b c d"
+            "e e e e";
+        width: var(--card-width);
+    }
+    .card-tab{
+        /* padding: 1rem; */
+        text-align: center;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 4px;
+        border: 1px solid var(--text-color);
+        background-color: var(--card-color);
+        border-bottom: 0px;
+        cursor: pointer;
+    }
+    .card-content{
+        border: 1px solid var(--text-color);
+        border-top: 0px;
+        width: var(--card-width);
+        height: var(--card-height);
+        background-color: var(--card-color);
+        z-index: -1;
+    }
+    .recipe-card{
+        border: 1px solid var(--text-color);
+        width: var(--card-width);
+        height: var(--card-height);
+        display: grid;
+        background-color: var(--card-color);
+        cursor: pointer;
+        border-radius: 0.5rem;
+        grid: 0.2fr 0.8fr / 1fr;
+    }
+    .recipe-card p{
+        padding: 0.5rem;
+        text-align: center;
+        visibility: hidden;
+    }
+    .section-card, .recipe-card{
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/44);
+    }
+    .recipe-card:last-child{
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/44 - 27px);
+    }
+    .open-section{
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/8);
+    }
+    .open-section:first-child{
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/44);
+    }
+    .open-section:last-child{
+        margin-bottom: calc(var(--card-height) - var(--card-height) * 2 + var(--card-width)/8 - 27px);
+    }
+    .open-section.recipe-card p{
+        visibility: visible;
+    }
+    .card-empty-tab{
+        border-bottom: 1px solid var(--text-color);
+    }
+    .card-content{
+        grid-area: e;
+    }
+    #appetizers-section .card-tab{
+        grid-area: a;
+    }
+    #mains-section .card-tab{
+        grid-area: b;
+    }
+    #desserts-section .card-tab{
+        grid-area: c;
+    }
+    #drinks-section .card-tab{
+        grid-area: d;
+    }
+</style>
+<body>
+    <header>
+        <h1><a href="./index.html">chicken soup for the dumbass soul</a></h1>
+        <p>the world's best worst community cookbook</p>
+    </header>
+    <main>
+        <section id="cardbox"></section>
+        <section id="recipe-display">
+            <!-- <button type="button" id="prev-page">prev page</button> -->
+            <div id="recipe-display-card" style="visibility: hidden">
+                <section id="recipe-header">
+                    <h1 id="recipe-title">recipe title</h1>
+                    <p id="recipe-author">recipe author</p>
+                    <p id="recipe-description">description</p>
+                </section>
+                <section id="recipe-ingredients">
+                    <h2>ingredients</h2>
+                    <ul id="ingredients-list"></ul>
+                </section>
+                <section id="recipe-instructions">
+                    <h2>instructions</h2>
+                    <ol id="instructions-list"></ol>
+                </section>
+            </div>
+            <!-- <button type="button" id="next-page">next page</button> -->
+        </section>
+    </main>
+</body>
+<script src="./cardscript.js"></script>
+</html>

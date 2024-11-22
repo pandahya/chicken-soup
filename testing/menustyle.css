@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Goudy+Bookletter+1911&family=Homemade+Apple&display=swap');
+
+:root{
+    --bgCol: #F7F5EC;
+    --textCol: #1E1E1E;
+    --accentCol: #347F34;
+    --highlightCol: #347f34cc;
+    --recipeCardWidth: 1000px;
+    --recipeCardHeight: 600px;
+}
+
+body{
+    background-color: var(--bgCol);
+    color: var(--textCol);
+    font-family: "Goudy Bookletter 1911";
+    margin: 0px auto;
+    max-width: 1320px;
+    text-wrap: balance;
+}
+
+nav{
+    display: grid;
+    grid: 1fr / 0.25fr 0.5fr 0.25fr;
+    /* justify-content: space-between; */
+    /* background-color: red; */
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+h1{
+    /* font-family: "Beth Ellen"; */
+    font-family: "Homemade Apple";
+    font-size: 1rem;
+    text-transform: capitalize;
+    line-height: 20px;
+    /* background-color: red; */
+    margin-bottom: 0px;
+}
+h3{
+    /* background-color: red; */
+    padding: 0;
+    margin: 8px 0px 2px 0px;
+}
+nav div h1 span{
+    font-family: "Goudy Bookletter 1911";
+}
+
+main{
+    margin-top: 40px;
+    text-align: center;
+}
+
+hr{
+    border-top: 1px solid lightgrey;
+    margin: 40px 0px 40px 0px;
+}
+ul li{
+    list-style: none;
+    /* background-color: green; */
+    margin: 8px 0px;
+}
+ul{
+    margin-block-start: 0px;
+    padding-inline-start: 0px;
+    padding-left: 0px;
+}
+ol, ol li{
+    /* background-color: blue; */
+    margin: 0;
+    /* padding: 0; */
+}
+
+a:link, a:visited{
+    color: var(--textCol);
+    text-decoration: none;
+}
+a:hover, a:active{
+    background-color: var(--accentCol);
+    color: var(--bgCol);
+}
+
+::selection{
+    background-color: var(--highlightCol);
+    color: var(--bgCol);
+}
