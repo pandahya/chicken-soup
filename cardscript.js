@@ -48,7 +48,7 @@ fetch('./recipes.json')
             newRecipeTitle.textContent = item.dish;
             newRecipeCard.appendChild(newRecipeTitle);
             newRecipeCard.addEventListener('click', ()=>{
-                recipeDisplayCard.style.visibility = "visible";
+                // recipeDisplayCard.style.visibility = "visible";
                 openRecipe(item,index);
             })
         }))
